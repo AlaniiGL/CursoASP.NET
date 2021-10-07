@@ -3,4 +3,15 @@ packages
 Vidly/bin
 Vidly/fonts
 Vidly/obj
+Vidly/Views/Web.config
 Vidly/favicon.ico
+Vidly/Global.asax
+Vidly/Global.asax.cs
+Vidly/packages.config
+Vidly/Startup.config
+Vidly/Startup.cs
+Vidly/Vidly.csproj
+Vidly/Vidly.csproj.user
+Vidly/Web.config
+Vidly/Web.Debug.config
+Vidly/Web.Release.config
