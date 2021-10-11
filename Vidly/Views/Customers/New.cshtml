@@ -1,0 +1,32 @@
+﻿@model Vidly.ViewModels.NewCustomerViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Create", "Customers"))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.Customer.Name, new {@class= "col-form-label col-form-label-sm mt-4", @for = "inputSmall"})
+    @Html.TextBoxFor(m => m.Customer.Name, new {@class = "form-control form-control-sm", @id = "inputSmall"})
+
+</div>
+<div class="form-group">
+    <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Cumpleaños (dd/mm/aaaa)</label>
+    @Html.TextBoxFor(m => m.Customer.Birthday, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+</div>
+    <div class="form-check chb-margdown">
+        @Html.CheckBoxFor(m => m.Customer.IsiSubscribedToNewsletter, new { @class = "form-check-input", @id = "flexCheckDefault" })
+        <label class="form-check-label" for="flexCheckDefault">
+            Suscribed To Newsletter?
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleSelect2" class="form-label mt-4">Example multiple select</label>
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-select", @id = "exampleSelect2"})
+    </div>
+
+}
