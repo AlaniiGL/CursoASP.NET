@@ -15,3 +15,6 @@ Vidly/Vidly.csproj.user
 Vidly/Web.config
 Vidly/Web.Debug.config
 Vidly/Web.Release.config
+Vidly/Properties
+Vidly/Migrations
+Vidly/App_Data
