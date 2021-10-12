@@ -351,6 +351,7 @@ button {
     margin-right: 5px;
 }
 
+
 button:focus:not(:focus-visible) {
   outline: 0;
 }
@@ -3094,6 +3095,7 @@ fieldset:disabled .btn {
   color: #fff;
   background-color: #375a7f;
   border-color: #375a7f;
+  margin-top: 10px;
 }
 
 .btn-primary:hover {
