@@ -8,27 +8,38 @@
 
 @using (Html.BeginForm("Save", "Movies"))
 {
+
     <div class="form-group">
-        @Html.LabelFor(c => c.Movie.Name, new { @class = "col-form-label col-form-label-sm mt-4", @for = "inputSmall" })
-        @Html.TextBoxFor(c => c.Movie.Name, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+        @Html.LabelFor(c => c.Name, new { @class = "col-form-label col-form-label-sm mt-4", @for = "inputSmall" })
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+        @Html.ValidationMessageFor(c => c.Name)
     </div>
 
     <div class="form-group ">
-        @Html.LabelFor(c => c.Movie.GenresId, new { @class = "form-label mt-4", @for = "exampleSelect2" })
-        @Html.DropDownListFor(c => c.Movie.GenresId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-select", @id = "exampleSelect2" })
+        @Html.LabelFor(c => c.GenresId, new { @class = "form-label mt-4", @for = "exampleSelect2" })
+        @Html.DropDownListFor(c => c.GenresId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-select", @id = "exampleSelect2" })
+        @Html.ValidationMessageFor(C => C.GenresId)
     </div>
 
     <div class="form-group">
         <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Release Date (dd/mm/aaaa)</label>
-        @Html.TextBoxFor(c => c.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control form-control-sm", @id = "inputSmall" })
+        @Html.TextBoxFor(c => c.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control form-control-sm", @id = "inputSmall" })
+        @Html.ValidationMessageFor(c => c.ReleaseDate)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(c => c.Movie.Stock, new { @class = "col-form-label col-form-label-sm mt-4", @for = "inputSmall" })
-        @Html.TextBoxFor(c => c.Movie.Stock, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+        @Html.LabelFor(c => c.Stock, new { @class = "col-form-label col-form-label-sm mt-4", @for = "inputSmall" })
+        @Html.TextBoxFor(c => c.Stock, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+        @Html.ValidationMessageFor(c => c.Stock)
     </div>
 
-    @Html.HiddenFor(c => c.Movie.Id)
+    @Html.HiddenFor(c => c.Id)
+    @Html.AntiForgeryToken()
 
     <button type="submit" class="btn btn-primary">Guardar</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
