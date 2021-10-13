@@ -1,0 +1,34 @@
+﻿@model Vidly.ViewModels.MovieFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Movie.Name, new { @class = "col-form-label col-form-label-sm mt-4", @for = "inputSmall" })
+        @Html.TextBoxFor(c => c.Movie.Name, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+    </div>
+
+    <div class="form-group ">
+        @Html.LabelFor(c => c.Movie.GenresId, new { @class = "form-label mt-4", @for = "exampleSelect2" })
+        @Html.DropDownListFor(c => c.Movie.GenresId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-select", @id = "exampleSelect2" })
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Release Date (dd/mm/aaaa)</label>
+        @Html.TextBoxFor(c => c.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control form-control-sm", @id = "inputSmall" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Movie.Stock, new { @class = "col-form-label col-form-label-sm mt-4", @for = "inputSmall" })
+        @Html.TextBoxFor(c => c.Movie.Stock, new { @class = "form-control form-control-sm", @id = "inputSmall" })
+    </div>
+
+    @Html.HiddenFor(c => c.Movie.Id)
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}

@@ -1911,6 +1911,7 @@ progress {
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
+  margin-top: 10px;
   color: #fff;
   vertical-align: top;
   border-color: #444;
@@ -3096,6 +3097,7 @@ fieldset:disabled .btn {
   background-color: #375a7f;
   border-color: #375a7f;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .btn-primary:hover {
